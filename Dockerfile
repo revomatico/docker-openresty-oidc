@@ -24,6 +24,7 @@ RUN set -ex \
     curl \
     unzip \
     git \
+    dnsmasq \
   && apk --no-cache add --virtual .build-dependencies \
     make \
     musl-dev \
