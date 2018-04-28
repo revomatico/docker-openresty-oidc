@@ -96,6 +96,7 @@ RUN set -ex \
   && ln -sf ${OPENRESTY_PREFIX}/luajit/bin/luajit-* /usr/local/bin/lua  \
   && ln -sf ${OPENRESTY_PREFIX}/luajit/bin/luarocks /usr/local/bin/luarocks \
   && ln -sf ${OPENRESTY_PREFIX}/luajit/bin/luarocks-admin /usr/local/bin/luarocks-admin \
+  && echo user=root >> /etc/dnsmasq.conf \
 ## Install lua-resty-openidc
   && cd ~/ \
   && luarocks install lua-resty-openidc \
