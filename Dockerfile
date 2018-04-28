@@ -5,9 +5,10 @@ ENV LUA_SUFFIX=jit-2.1.0-beta3 \
     LUAJIT_VERSION=2.1 \
     NGINX_PREFIX=/opt/openresty/nginx \
     OPENRESTY_PREFIX=/opt/openresty \
-#    OPENRESTY_SRC_SHA1=653bb9977c0cbf164fbd195df4180e91d25a3f92 \
+    OPENRESTY_SRC_SHA256=d1246e6cfa81098eea56fb88693e980d3e6b8752afae686fab271519b81d696b \
     OPENRESTY_VERSION=1.13.6.1 \
     LUAROCKS_VERSION=2.4.1 \
+    LUAROCKS_SRC_SHA256=e429e0af9764bfd5cb640cac40f9d4ed1023fa17c052dff82ed0a41c05f3dcf9 \
     VAR_PREFIX=/var/nginx
 
 RUN set -ex \
@@ -39,7 +40,7 @@ RUN set -ex \
   && curl -fsSL https://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz -o /tmp/openresty.tar.gz \
   \
   && cd /tmp \
-#  && echo "${OPENRESTY_SRC_SHA1} *openresty.tar.gz" | sha1sum -c - \
+  && echo "${OPENRESTY_SRC_SHA256} *openresty.tar.gz" | sha256sum -c - \
   && tar -xzf openresty.tar.gz \
   \
   && cd openresty-* \
@@ -71,6 +72,7 @@ RUN set -ex \
   && curl -fsSL https://keplerproject.github.io/luarocks/releases/luarocks-${LUAROCKS_VERSION}.tar.gz -o /tmp/luarocks.tar.gz \
   \
   && cd /tmp \
+  && echo "${LUAROCKS_SRC_SHA256} *luarocks.tar.gz" | sha256sum -c - \
   && tar -xzf luarocks.tar.gz \
   \
   && cd luarocks-* \
@@ -101,4 +103,4 @@ RUN set -ex \
 
 WORKDIR $NGINX_PREFIX
 
-CMD ["nginx", "-g", "daemon off; error_log /dev/stderr info;"]
+CMD ["openresty", "-g", "daemon off; error_log /dev/stderr info;"]
