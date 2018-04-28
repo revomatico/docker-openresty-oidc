@@ -1,3 +1,7 @@
+This is a manual attempt to build!
+
+It would be prefferred to use the official docker penresty/openresty:alpine-fat
+
 # Docker image based on OpenResty using Zmartzone's LUA OpenID Connect plugin
 - Original projects:
     - zot24/openresty
