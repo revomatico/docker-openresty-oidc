@@ -10,3 +10,7 @@
 - OpenResty: http://openresty.org
 - OpenID Connect LUA plugin: https://github.com/zmartzone/lua-resty-openidc
 
+# Changelog
+- 2018-10-04:
+    - Updated OpenResty to 1.13.6.2 in Dockerfile
+
