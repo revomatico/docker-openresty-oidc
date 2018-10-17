@@ -7,8 +7,8 @@ ENV LUA_SUFFIX=jit-2.1.0-beta3 \
     OPENRESTY_PREFIX=/opt/openresty \
     OPENRESTY_SRC_SHA256=946e1958273032db43833982e2cec0766154a9b5cb8e67868944113208ff2942 \
     OPENRESTY_VERSION=1.13.6.2 \
-    LUAROCKS_VERSION=2.4.1 \
-    LUAROCKS_SRC_SHA256=e429e0af9764bfd5cb640cac40f9d4ed1023fa17c052dff82ed0a41c05f3dcf9 \
+    LUAROCKS_VERSION=2.4.4 \
+    LUAROCKS_SRC_SHA256=3938df33de33752ff2c526e604410af3dceb4b7ff06a770bc4a240de80a1f934 \
     VAR_PREFIX=/var/nginx
 
 RUN set -ex \
@@ -70,7 +70,7 @@ RUN set -ex \
   && rm -rf /tmp/openresty* \
   \
 ## LuaRocks
-  && curl -fsSL https://keplerproject.github.io/luarocks/releases/luarocks-${LUAROCKS_VERSION}.tar.gz -o /tmp/luarocks.tar.gz \
+  && curl -fsSL http://luarocks.github.io/luarocks/releases/luarocks-${LUAROCKS_VERSION}.tar.gz -o /tmp/luarocks.tar.gz \
   \
   && cd /tmp \
   && echo "${LUAROCKS_SRC_SHA256} *luarocks.tar.gz" | sha256sum -c - \
@@ -100,6 +100,8 @@ RUN set -ex \
 ## Install lua-resty-openidc
   && cd ~/ \
   && luarocks install lua-resty-openidc \
+## Install lua-resty-xacml-pep
+  && curl -fsSL https://raw.githubusercontent.com/zmartzone/lua-resty-xacml-pep/master/lib/resty/xacml_pep.lua -o /opt/openresty/lualib/resty/xacml_pep.lua \
 ## Cleanup
   && apk del .build-dependencies 2>/dev/null
 

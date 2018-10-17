@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# Test run the container using a shell
+
 . common.sh
 
-docker run -d -it \
-    -p 8888:80 \
+docker run -it --rm \
     --name $DOCKER_CONTAINER \
-    $DOCKER_IMAGE
+    $DOCKER_IMAGE \
+    sh
