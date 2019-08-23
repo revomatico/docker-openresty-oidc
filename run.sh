@@ -7,4 +7,4 @@
 docker run -it --rm \
     --name $DOCKER_CONTAINER \
     $DOCKER_IMAGE \
-#    sh
+    sh

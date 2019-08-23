@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.10
 MAINTAINER Cristian Chiru <cristian.chiru@revomatico.com>
 
 ENV LUA_SUFFIX=jit-2.1.0-beta3 \
@@ -18,7 +18,7 @@ RUN set -ex \
     libpcrecpp \
     libpcre16 \
     libpcre32 \
-    libssl1.0 \
+    libssl1.1 \
     libstdc++ \
     openssl \
     pcre \
@@ -101,7 +101,7 @@ RUN set -ex \
 ## Install lua-resty-openidc
   && cd ~/ \
   # Fix for https://github.com/zmartzone/lua-resty-openidc/issues/213#issuecomment-432471572
-  && luarocks install lua-resty-hmac \
+#  && luarocks install lua-resty-hmac \
   && luarocks install lua-resty-openidc ${LUA_RESTY_OPENIDC_VERSION} \
 ## Install lua-resty-xacml-pep
 #  && curl -fsSL https://raw.githubusercontent.com/zmartzone/lua-resty-xacml-pep/master/lib/resty/xacml_pep.lua -o /opt/openresty/lualib/resty/xacml_pep.lua \

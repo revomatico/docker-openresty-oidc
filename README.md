@@ -19,10 +19,12 @@
 # Changelog
 - 2019-08-23 [1.7.2-1]:
     - Bumped versions:
+        - alpine linux base image: 3.10
         - luarocks: 3.1.3
         - openresty: 1.15.8.2
         - lua-resty-openidc: 1.7.2-1
     - Removed lua-resty-xacml-pep
+    - Removed install of obsolete luarocks package `lua-resty-hmac`, as it is now included in the dependent [lua-jwt](https://luarocks.org/modules/cdbattags/lua-resty-jwt)
 - 2018-11-13:
     - Added lua-resty-hmac to prevent `state from argument: X does not match state restored from session Y` issue. See https://github.com/zmartzone/lua-resty-openidc/issues/213
 - 2018-10-17:
