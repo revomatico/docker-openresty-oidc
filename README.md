@@ -1,17 +1,23 @@
 # docker-openresty-oidc
-> Openresty + luarocks + lua-resty-openidc + lua-resty-xacml-pep in a minimal Alpine image (59MB)
+> Luarocks + openresty + lua-resty-openidc in a minimal Alpine image (60MB)
 
-- The official release, 250MB+: [Openresty/openresty:alpine-fat](https://hub.docker.com/r/openresty/openresty/)
+- The official release that includes luarocks is 107MB: [openresty/openresty:alpine-fat](https://hub.docker.com/r/openresty/openresty/tags)
 
 - Original Docker projects:
-    - [zot24](https://hub.docker.com/u/zot24/)/openresty
-    - [zot24](https://hub.docker.com/u/zot24/)/openresty-luarocks
+    - [zot24/openresty](https://hub.docker.com/r/zot24/openresty)
+    - [zot24/openresty-luarocks](https://hub.docker.com/r/zot24/openresty-luarocks)
 
 - OpenResty: http://openresty.org
 - OpenID Connect LUA plugin: https://github.com/zmartzone/lua-resty-openidc
-- lua-resty-xacml-pep library: https://github.com/zmartzone/lua-resty-xacml-pep
+- [Removed] ~~lua-resty-xacml-pep library: https://github.com/zmartzone/lua-resty-xacml-pep~~
 
 # Changelog
+- 2019-08-23:
+    - Bumped versions:
+        - luarocks: 3.1.3
+        - openresty: 1.15.8.2
+        - lua-resty-openidc: 1.7.2-1
+    - Removed lua-resty-xacml-pep
 - 2018-11-13:
     - Added lua-resty-hmac to prevent `state from argument: X does not match state restored from session Y` issue. See https://github.com/zmartzone/lua-resty-openidc/issues/213
 - 2018-10-17:
