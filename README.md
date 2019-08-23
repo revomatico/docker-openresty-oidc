@@ -1,6 +1,8 @@
 # docker-openresty-oidc
 > Luarocks + openresty + lua-resty-openidc in a minimal Alpine image (60MB)
 
+- Public releases versions follow semver, matching lua-resty-openidc versioning, e.g. 1.7.2
+
 - The official release that includes luarocks is 107MB: [openresty/openresty:alpine-fat](https://hub.docker.com/r/openresty/openresty/tags)
 
 - Original Docker projects:
@@ -11,8 +13,11 @@
 - OpenID Connect LUA plugin: https://github.com/zmartzone/lua-resty-openidc
 - [Removed] ~~lua-resty-xacml-pep library: https://github.com/zmartzone/lua-resty-xacml-pep~~
 
+# TODO
+- [ ] Run openresty as unpriviledged user, for improved security
+
 # Changelog
-- 2019-08-23:
+- 2019-08-23 [1.7.2-1]:
     - Bumped versions:
         - luarocks: 3.1.3
         - openresty: 1.15.8.2
