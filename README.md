@@ -17,6 +17,8 @@
 - [ ] Run openresty as unpriviledged user, for improved security
 
 # Changelog
+- 2019-10-18 [1.7.2-2]:
+    - Now dnsmasq is started before openresty, so local 127.0.0.1 resolver can be used in nginx
 - 2019-08-23 [1.7.2-1]:
     - Bumped versions:
         - alpine linux base image: 3.10
