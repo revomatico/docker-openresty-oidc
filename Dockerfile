@@ -110,4 +110,4 @@ RUN set -ex \
 
 WORKDIR $NGINX_PREFIX
 
-CMD ["openresty", "-g", "daemon off; error_log /dev/stderr info;"]
+CMD dnsmasq; openresty -g "daemon off; error_log /dev/stderr info;"
