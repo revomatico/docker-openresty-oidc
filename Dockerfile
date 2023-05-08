@@ -58,6 +58,7 @@ RUN set -ex \
     --with-luajit \
     --with-pcre-jit \
     --with-ipv6 \
+    --with-http_stub_status_module \
     --with-http_ssl_module \
     --without-http_ssi_module \
     --with-http_realip_module \
