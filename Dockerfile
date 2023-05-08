@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.17
 MAINTAINER Cristian Chiru <cristian.chiru@revomatico.com>
 
 ENV LUA_SUFFIX=jit-2.1.0-beta3 \
