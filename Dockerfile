@@ -39,7 +39,7 @@ RUN set -ex \
     libc-dev \
   \
 ## OpenResty
-  && curl -fsSL https://github.com/openresty/openresty/releases/download/v${OPENRESTY_VERSION}/openresty-${OPENRESTY_VERSION}.tar.gz -o /tmp/openresty.tar.gz \
+  && curl -fsSL https://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz -o /tmp/openresty.tar.gz \
   \
   && cd /tmp \
   && echo "${OPENRESTY_SRC_SHA256} *openresty.tar.gz" | sha256sum -c - \
